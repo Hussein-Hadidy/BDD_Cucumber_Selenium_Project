@@ -46,8 +46,10 @@ public class UpdateContactsPage
 
     public static void enterNewEmail(WebDriver driver, String email) throws InterruptedException {
         explicitWait(driver, 15, emailLocator);
+        Thread.sleep(2000);
+        driver.findElement(emailLocator).click();
         driver.findElement(emailLocator).clear();
-        Thread.sleep(500);
+        Thread.sleep(1500);
         driver.findElement(emailLocator).sendKeys(email);
     }
 

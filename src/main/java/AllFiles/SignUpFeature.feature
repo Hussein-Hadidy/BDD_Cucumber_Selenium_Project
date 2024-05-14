@@ -6,7 +6,7 @@ Feature: SignUp Features
   Definition of done: the system should create a new account for me and redirect me to the home page.
 
     Given the user is in the SignUp page
-    When the user enters "firstname", "lastname", "emafl126@email.com", "password"
+    When the user enters "firstname", "lastname", "TestTrial2@email.com", "password"
     And the user clicks on the submit button
     Then the system should create a new account for the user and redirect them to the home page.
 
