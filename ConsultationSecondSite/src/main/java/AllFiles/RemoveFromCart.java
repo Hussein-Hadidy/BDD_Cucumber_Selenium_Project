@@ -40,30 +40,36 @@ public RemoveFromCart() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public static void RemoveItemFromCart(WebDriver driver, String itemName)
-    {
+    public static void RemoveItemFromCart(WebDriver driver, String itemName) throws InterruptedException {
+        Thread.sleep(1000);
         switch (itemName) {
             case "Sauce Labs Backpack":
+                explicitWait(driver, 15, removeItem1Locator);
                 driver.findElement(removeItem1Locator).click();
                 cartItemsCount--;
                 break;
             case "Sauce Labs Bike Light":
+                explicitWait(driver, 15, removeItem2Locator);
                 driver.findElement(removeItem2Locator).click();
                 cartItemsCount--;
                 break;
             case "Sauce Labs Bolt T-Shirt":
+                explicitWait(driver, 15, removeItem3Locator);
                 driver.findElement(removeItem3Locator).click();
                 cartItemsCount--;
                 break;
             case "Sauce Labs Fleece Jacket":
+                explicitWait(driver, 15, removeItem4Locator);
                 driver.findElement(removeItem4Locator).click();
                 cartItemsCount--;
                 break;
             case  "Sauce Labs Onesie":
+                explicitWait(driver, 15, removeItem5Locator);
                 driver.findElement(removeItem5Locator).click();
                 cartItemsCount--;
                 break;
             case "Test.allTheThings() T-Shirt (Red)":
+                explicitWait(driver, 15, removeItem6Locator);
                 driver.findElement(removeItem6Locator).click();
                 cartItemsCount--;
                 break;
@@ -84,32 +90,39 @@ public RemoveFromCart() throws InterruptedException {
     {
         switch (itemName) {
             case "Sauce Labs Backpack":
-                if (!driver.findElement(removeItem1Locator).getText().equals("Add to cart")) {
+                System.out.println("I am here");
+                explicitWait(driver, 15, addItem1Locator);
+                if (!driver.findElement(addItem1Locator).getText().equals("Add to cart")) {
                     throw new AssertionError("Button text is not Add to cart: actual=" + driver.findElement(addItem1Locator).getText());
                 }
                 break;
             case "Sauce Labs Bike Light":
-                if (!driver.findElement(removeItem2Locator).getText().equals("Add to cart")) {
+                explicitWait(driver, 15, addItem2Locator);
+                if (!driver.findElement(addItem2Locator).getText().equals("Add to cart")) {
                     throw new AssertionError("Button text is not Add to cart: actual=" + driver.findElement(addItem2Locator).getText());
                 }
                 break;
             case "Sauce Labs Bolt T-Shirt":
-                if (!driver.findElement(removeItem3Locator).getText().equals("Add to cart")) {
+                explicitWait(driver, 15, addItem3Locator);
+                if (!driver.findElement(addItem3Locator).getText().equals("Add to cart")) {
                     throw new AssertionError("Button text is not Add to cart: actual=" + driver.findElement(addItem3Locator).getText());
                 }
                 break;
             case "Sauce Labs Fleece Jacket":
-                if (!driver.findElement(removeItem4Locator).getText().equals("Add to cart")) {
+                explicitWait(driver, 15, addItem4Locator);
+                if (!driver.findElement(addItem4Locator).getText().equals("Add to cart")) {
                     throw new AssertionError("Button text is not Add to cart: actual=" + driver.findElement(addItem4Locator).getText());
                 }
                 break;
             case  "Sauce Labs Onesie":
-                if (!driver.findElement(removeItem5Locator).getText().equals("Add to cart")) {
+                explicitWait(driver, 15, addItem5Locator);
+                if (!driver.findElement(addItem5Locator).getText().equals("Add to cart")) {
                     throw new AssertionError("Button text is not Add to cart: actual=" + driver.findElement(addItem5Locator).getText());
                 }
                 break;
             case "Test.allTheThings() T-Shirt (Red)":
-                if (!driver.findElement(removeItem6Locator).getText().equals("Add to cart")) {
+                explicitWait(driver, 15, addItem6Locator);
+                if (!driver.findElement(addItem6Locator).getText().equals("Add to cart")) {
                     throw new AssertionError("Button text is not Add to cart: actual=" + driver.findElement(addItem6Locator).getText());
                 }
                 break;

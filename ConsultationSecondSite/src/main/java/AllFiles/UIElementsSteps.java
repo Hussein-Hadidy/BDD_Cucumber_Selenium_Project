@@ -27,4 +27,23 @@ public class UIElementsSteps {
         String status = UIElementsPage.checkCartPosition(driver);
         UIElementsPage.assertEqualUrls("True", status);
     }
+
+    @When("the user chooses an item to add to the cart")
+    public void the_user_chooses_an_item_to_add_to_the_cart()
+    {
+        AddToCart.AddItemToCart(driver, "Sauce Labs Backpack");
+        AddToCart.clickOnCart(driver);
+    }
+    @When("User looks at the bottom right corner of the page")
+    public void user_looks_at_the_bottom_right_corner_of_the_page()
+    {
+
+    }
+    @Then("User should see the checkout button in the bottom right corner of the page")
+    public void user_should_see_the_checkout_button_in_the_bottom_right_corner_of_the_page()
+    {
+        String status = UIElementsPage.checkCheckoutPosition(driver);
+        UIElementsPage.assertEqualUrls("True", status);
+
+    }
 }

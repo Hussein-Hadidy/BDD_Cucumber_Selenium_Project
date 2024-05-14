@@ -20,11 +20,7 @@ public class RemoveFromCartSteps {
         LoginPage.clickLoginButton(driver);
     }
 
-    @When("I click on the Add to Cart button for {string}.")
-    public void i_click_on_the_add_to_cart_button_for(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        AddToCart.AddItemToCart(driver, string);
-    }
+
     @Then("I should see that the cart icon has a badge with {int}.")
     public void i_should_see_that_the_cart_icon_has_a_badge_with(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
@@ -37,13 +33,20 @@ public class RemoveFromCartSteps {
         AddToCart.checkButtonChanged(driver,itemName);
     }
     @When("I click on the Remove button for {string}.")
-    public void i_click_on_the_remove_button_for(String string) {
-        // Write code here that turns the phrase above into concrete actions
+    public void i_click_on_the_remove_button_for(String string) throws InterruptedException {
         RemoveFromCart.RemoveItemFromCart(driver, string);
     }
     @Then("the add to cart button of {string} should change to Add to Cart.")
-    public void the_add_to_cart_button_of_should_change_to_add_to_cart(String string) {
+    public void the_add_to_cart_button_of_should_change_to_add_to_cart(String string) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
+        Thread.sleep(2000);
         RemoveFromCart.checkButtonChangedToAddToCart(driver,string);
+    }
+
+    @And("I click on the Add to Cart button for {string} {string}.")
+    public void iClickOnTheAddToCartButtonFor(String arg0, String arg1) throws InterruptedException {
+        AddToCart.AddItemToCart(driver, arg0);
+        Thread.sleep(2000);
+        AddToCart.AddItemToCart(driver, arg1);
     }
 }

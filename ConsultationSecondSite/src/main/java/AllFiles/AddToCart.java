@@ -54,29 +54,36 @@ public AddToCart() throws InterruptedException {
 
     public static void AddItemToCart(WebDriver driver, String itemName)
     {
+
         switch (itemName) {
             case "Sauce Labs Backpack":
+                explicitWait(driver, 15, addItem1Locator);
                 driver.findElement(addItem1Locator).click();
                 cartItemsCount++;
 
                 break;
             case "Sauce Labs Bike Light":
+                explicitWait(driver, 15, addItem2Locator);
                 driver.findElement(addItem2Locator).click();
                 cartItemsCount++;
                 break;
             case "Sauce Labs Bolt T-Shirt":
+                explicitWait(driver, 15, addItem3Locator);
                 driver.findElement(addItem3Locator).click();
                 cartItemsCount++;
                 break;
             case "Sauce Labs Fleece Jacket":
+                explicitWait(driver, 15, addItem4Locator);
                 driver.findElement(addItem4Locator).click();
                 cartItemsCount++;
                 break;
             case  "Sauce Labs Onesie":
+                explicitWait(driver, 15, addItem5Locator);
                 driver.findElement(addItem5Locator).click();
                 cartItemsCount++;
                 break;
             case "Test.allTheThings() T-Shirt (Red)":
+                explicitWait(driver, 15, addItem6Locator);
                 driver.findElement(addItem6Locator).click();
                 cartItemsCount++;
                 break;
@@ -161,9 +168,15 @@ public AddToCart() throws InterruptedException {
         driver.findElement(cartLocator).click();
     }
 
-    public static void clickOnCheckout(WebDriver driver) throws InterruptedException {
+    public static void clickOnCheckout(WebDriver driver) throws InterruptedException
+    {
         Thread.sleep(2000);
         explicitWait(driver, 15, checkoutButtonLocator);
+        WebElement checkOutElement = driver.findElement(checkoutButtonLocator);
+        Point location = checkOutElement.getLocation();
+        int x = location.getX();
+        int y = location.getY();
+        System.out.println("The element is located at: (" + x + ", " + y);
         driver.findElement(checkoutButtonLocator).click();
     }
 

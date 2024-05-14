@@ -12,6 +12,7 @@ import java.time.Duration;
 public class UIElementsPage {
 
     static By cartLocator = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
+    static By checkoutButtonLocator = By.id("checkout");
     public static void explicitWait(WebDriver driver, int time, By locator)
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
@@ -34,6 +35,25 @@ public class UIElementsPage {
             return "False";
         }
     }
+
+    public static String checkCheckoutPosition(WebDriver driver)
+    {
+        explicitWait(driver, 15, checkoutButtonLocator);
+        WebElement checkOutElement = driver.findElement(checkoutButtonLocator);
+        Point location = checkOutElement.getLocation();
+        int x = location.getX();
+        int y = location.getY();
+        if(x==737 && y==410)
+        {
+            return "True";
+        }
+        else
+        {
+            return "False";
+        }
+    }
+
+
     public static void assertEqualUrls(String expectedUrl, String actualUrl)
     {
         if (!expectedUrl.equals(actualUrl))
