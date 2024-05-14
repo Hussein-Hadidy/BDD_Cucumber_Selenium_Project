@@ -1,5 +1,8 @@
 Feature: Add To Cart Feature
+
   Scenario: User adds an item to cart
+  As a user, I want to be able to add an item to the cart so that I can purchase it later
+  Definition of done: The item should be added to the cart and the cart icon should have a badge with the number of items in the cart
     Given I am on the inventory page as "standard_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Backpack"
     Then I should see that the cart icon has a badge with 1 
@@ -7,6 +10,8 @@ Feature: Add To Cart Feature
 
 
   Scenario: User adds an item to cart
+  As a user, I want to be able to add an item to the cart so that I can purchase it later
+  Definition of done: The item should be added to the cart and the cart icon should have a badge with the number of items in the cart
     Given I am on the inventory page as "error_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Bolt T-Shirt"
     Then I should see that the cart icon has a badge with 1
@@ -14,6 +19,8 @@ Feature: Add To Cart Feature
 
 
   Scenario: User adds multiple items to cart
+  As a user, I want to be able to add multiple items to the cart so that I can purchase them later
+  Definition of done: The items should be added to the cart and the cart icon should have a badge with the number of items in the cart
     Given I am on the inventory page as "standard_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Backpack"
     And I click on the Add to Cart button for "Sauce Labs Bike Light"
@@ -22,6 +29,8 @@ Feature: Add To Cart Feature
     And the add to cart button of "Sauce Labs Bike Light" should change to remove
 
   Scenario: User adds multiple items to cart
+  As a user, I want to be able to add multiple items to the cart so that I can purchase them later
+  Definition of done: The items should be added to the cart and the cart icon should have a badge with the number of items in the cart
     Given I am on the inventory page as "standard_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Backpack"
     And I click on the Add to Cart button for "Sauce Labs Bike Light"
@@ -34,6 +43,8 @@ Feature: Add To Cart Feature
     And the add to cart button of "Sauce Labs Bike Light" should change to remove
 
   Scenario: User adds multiple items to cart
+  As a user, I want to be able to add multiple items to the cart so that I can purchase them later
+  Definition of done: The items should be added to the cart and the cart icon should have a badge with the number of items in the cart
     Given I am on the inventory page as "error_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Backpack"
     And I click on the Add to Cart button for "Sauce Labs Bike Light"
@@ -46,6 +57,9 @@ Feature: Add To Cart Feature
     And the add to cart button of "Sauce Labs Bike Light" should change to remove
 
   Scenario: User checks out the cart standard
+  As a user, I want to be able to check out the cart so that I can purchase the items
+  Definition of done: The user should be able to check out the cart and see the checkout overview page
+
     Given I am on the inventory page as "standard_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Backpack"
     And I click on the cart icon
@@ -57,6 +71,8 @@ Feature: Add To Cart Feature
     Then I should see thank you your order is completed
 
   Scenario: User checks out the cart Other User
+  As a user, I want to be able to check out the cart so that I can purchase the items
+  Definition of done: The user should be able to check out the cart and see the checkout overview page
     Given I am on the inventory page as "error_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Backpack"
     And I click on the cart icon
@@ -68,6 +84,8 @@ Feature: Add To Cart Feature
     Then I should see thank you your order is completed
 
   Scenario: User checks out the cart Other User problem
+  As a user, I want to be able to check out the cart so that I can purchase the items
+  Definition of done: The user should be able to check out the cart and see the checkout overview page
     Given I am on the inventory page as "problem_user" and "secret_sauce"
     When I click on the Add to Cart button for "Sauce Labs Backpack"
     And I click on the cart icon

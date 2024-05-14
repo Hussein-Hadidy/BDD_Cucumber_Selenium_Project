@@ -4,10 +4,10 @@ Feature: Adding a new contact to the address book
 
 
   Scenario: Adding a valid new contact to the address book
-  As a user, I should be logged in successfully using my email "huss1@gmail.com" and password "12345678".
+  As a user, I should be logged in successfully using my email and password.
   After logging in, I should be navigated to the address book page.
-  On the address book page, I should see a form to enter the details of the new contact.
-  I enter the contact details including first name "Hussein," last name "Khaled," date of birth "2024-12-20," email "example@hotmail.com," phone number "01022020337," street address line 1 "Street address1," street address line 2 "Street address2," city "Cairo," state/province "Cairo," postal code "90210," and country "Egypt."
+  I should see a form to enter the details of the new contact.
+  I enter the contact details including first name, last name, date of birth, email, phone number, and address.
   Upon entering all the required details, I click on the submit button.
   After submission, I should receive confirmation that the new contact has been successfully added to the address book.
   I should now be able to see the new contact listed in the address book.
@@ -21,11 +21,11 @@ Feature: Adding a new contact to the address book
   Scenario: Adding a new contact with valid large email to the address book
   As a user of the address book feature, I want to be able to add a new contact with valid details,
   including a large email address, so that I can efficiently manage my contacts without limitations.
-  I should be logged in successfully using my email "huss1@gmail.com" and password "12345678".
+  I should be logged in successfully using my email and password.
   After logging in, I should be navigated to the address book page.
   On the address book page, I should see a form to enter the details of the new contact.
-  I enter the contact details including first name "Hussein," last name "Khaled," date of birth "2024-12-20," email "daniel@email.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm,"
-  phone number "01022020337," street address line 1 "Street address1," street address line 2 "Street address2," city "Cairo," state/province "Cairo," postal code "90210," and country "Egypt."
+  I enter the contact details including first name last name, date of birth, email.
+  phone number, street address line 1, street address line 2, city, state/province, postal code, and country.
   Upon entering all the required details, I click on the submit button.
   Definition of Done: After submission, I should receive confirmation that the new contact with the large email address has been successfully added to the address book.
 
@@ -37,10 +37,10 @@ Feature: Adding a new contact to the address book
   Scenario: Adding a new contact with invalid email to the address book
 
   As a user of the address book feature, I want the system to validate email addresses when adding a new contact to ensure data accuracy and prevent errors.
-  I should be logged in successfully using my email "huss1@gmail.com" and password "12345678".
+  I should be logged in successfully using my email and password.
   After logging in, I should be navigated to the address book page.
   On the address book page, I should see a form to enter the details of the new contact.
-  I enter the contact details including first name "Hussein," last name "Khaled," date of birth "2024-12-20," invalid email "example," phone number "01022020337," street address line 1 "Street address1," street address line 2 "Street address2," city "Cairo," state/province "Cairo," postal code "90210," and country "Egypt."
+  I enter the contact details including first name, last name, date of birth, invalid email, phone number, street address line 1, street address line 2, city, state/province, postal code, and country.
   Upon entering all the required details, I click on the submit button.
   Definition of done: After submission, I should receive an error message specifically for the email field indicating that the entered email address is invalid.
 
@@ -52,10 +52,10 @@ Feature: Adding a new contact to the address book
   Scenario: Adding a new contact with invalid email to the address book
 
   As a user of the address book feature, I expect the system to validate email addresses when adding a new contact to prevent erroneous data entries.
-  I successfully log in using my email "huss1@gmail.com" and password "12345678" and reach the address book page.
+  I successfully log in using my email, and password and reach the address book page.
   On the address book page, I see a form to input new contact details.
-  I enter the new contact's details: first name "Hussein," last name "Khaled," date of birth "2024-12-20," invalid email "example," phone number "01022020337",
-  street address line 1 "Street address1," street address line 2 "Street address2," city "Cairo," state/province "Cairo," postal code "90210," and country "Egypt."
+  I enter the new contact's details: first name, last name, date of birth, invalid email, phone number,
+  street address line 1, street address line 2, city, state/province, postal code, and country.
   After clicking the submit button, the system should detect the invalid email format.
   Definition of done: error message specifically related to the email field should be displayed, indicating that the entered email address is invalid.
   and The form should not proceed with adding the new contact until a valid email address is provided.
@@ -68,10 +68,10 @@ Feature: Adding a new contact to the address book
   Scenario: Adding a new contact with invalid phone number to the address book
 
   As a user of the address book feature, I expect the system to validate phone numbers when adding a new contact to ensure accurate data entry.
-  I successfully log in using my email "huss1@gmail.com" and password "12345678" and reach the address book page.
+  I successfully log in using my email and password and reach the address book page.
   On the address book page, I see a form to input new contact details.
-  I enter the new contact's details: first name "Hussein," last name "Khaled," date of birth "2024-12-20," email "example@hotmail.com," invalid phone number "800453521a",
-  street address line 1 "Street address1," street address line 2 "Street address2," city "Cairo," state/province "Cairo," postal code "90210," and country "Egypt."
+  I enter the new contact's details: first name, last name, date of birth, email, invalid phone number,
+  street address line 1, street address line 2, city, state/province, postal code, and country.
   After clicking the submit button, the system should detect the invalid phone number format.
   Definition of done: error message specifically related to the phone number field should be displayed, indicating that the entered phone number is invalid.
 
@@ -83,7 +83,7 @@ Feature: Adding a new contact to the address book
   Scenario: User clicks on logout button
 
   As a user of the address book feature, I want the ability to log out securely so that my session ends and I can return to the login page.
-  I successfully log in using my email "huss1@gmail.com" and password "12345678" and reach the address book page.
+  I successfully log in using my email and password and reach the address book page.
   On the address book page, I should see a logout button.
   On clicking the logout button, the system should end my session.
   Definition of Done: After logging out, I should be redirected to the login page.
@@ -95,10 +95,10 @@ Feature: Adding a new contact to the address book
   Scenario: Adding a duplicated contact to the address book
 
   As a user of the address book feature, I expect the system to prevent the addition of duplicated contacts to maintain data integrity.
-  I successfully log in using my email "huss1@gmail.com" and password "12345678" and reach the address book page.
+  I successfully log in using my email, and password, and reach the address book page.
   On the address book page, I see a form to input new contact details.
-  I enter the new contact's details: first name "Hussein," last name "Khaled," date of birth "2024-12-20," email "example@hotmail.com," phone number "01022020337",
-  street address line 1 "Street address1," street address line 2 "Street address2," city "Cairo," state/province "Cairo," postal code "90210," and country "Egypt."
+  I enter the new contact's details: first name, last name, date of birth, email, phone number,
+  street address line 1, street address line 2, city, state/province, postal code, and country.
   After clicking the submit button, the system should check if a contact with the same email or phone number already exists in the address book.
   If a duplicate contact is detected, I should remain on the add contact page.
   Definition of done: An errror message should be displayed, indicating that the contact already exists and preventing the addition of the duplicate contact.
