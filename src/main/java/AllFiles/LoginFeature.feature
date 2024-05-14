@@ -2,7 +2,7 @@ Feature: Login Feature
   Scenario: User logs in with valid credentials
 
   As a user with an existing account, I aim to log in to the application using my correct credentials to access its features.
-  when I am on the login page, and I input my valid email address "huss1@gmail.com" along with the password "12345678",
+  when I am on the login page, and I input my valid email address along with the password,
   then proceed to click on the Submit button,
   Definition of done: the expected outcome is to successfully log in to the application.
 
@@ -14,7 +14,7 @@ Feature: Login Feature
   Scenario: User logs in with invalid credentials
 
   As a registered user, I desire notification if I input incorrect credentials to rectify any errors.
-  While on the login page, if I enter an invalid email such as "hussein@gmail.com" and leave the password field blank,
+  While on the login page, if I enter an invalid email and leave the password field blank,
   then proceed to click Submit,
   Definition of done: the expected outcome should be an error message indicating that the password field cannot be empty.
 
