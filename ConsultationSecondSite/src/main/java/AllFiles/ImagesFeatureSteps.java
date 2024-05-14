@@ -20,7 +20,7 @@ public class ImagesFeatureSteps {
     @When("I look at the list of items")
     public void i_look_at_the_list_of_items()
     {
-
+        ImagesFeaturePage.scrollImages(driver);
     }
     @Then("I should see an image for each item in the list")
     public void i_should_see_an_image_for_each_item_in_the_list()

@@ -1,6 +1,7 @@
 package AllFiles;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -60,9 +61,10 @@ public class ImagesFeaturePage {
             throw new AssertionError("URLs are not equal: expected=" + expectedUrl + ", actual=" + actualUrl);
         }
     }
-
-    public static void scrollImages()
+    public static void scrollImages(WebDriver driver)
     {
-
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 250)");
     }
+
 }

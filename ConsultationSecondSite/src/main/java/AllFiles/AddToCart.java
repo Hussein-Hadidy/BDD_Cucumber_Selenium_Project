@@ -1,7 +1,9 @@
 package AllFiles;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,7 +35,7 @@ public class AddToCart
 
     static By checkoutButtonLocator = By.id("checkout");
     static By continueCheckoutButtonLocator = By.id("continue");
-    static By overviewCheckoutLocator = By.xpath("//*[@id=\"header_container\"]/div[2]/span");
+    static By overviewCheckoutLocator = By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[1]");
     static By finishCheckoutLocator = By.id("finish");
 
     static By firstNameLocator = By.id("first-name");
@@ -148,6 +150,14 @@ public AddToCart() throws InterruptedException {
     public static void clickOnCart(WebDriver driver)
     {
         explicitWait(driver, 15, cartLocator);
+        WebElement cartElement = driver.findElement(cartLocator);
+        Point location = cartElement.getLocation();
+        int x = location.getX();
+        int y = location.getY();
+        System.out.println("The element is located at: (" + x + ", " + y);
+
+        // Print the position
+        System.out.println("The element is located at: (" + x + ", " + y + ")");
         driver.findElement(cartLocator).click();
     }
 
